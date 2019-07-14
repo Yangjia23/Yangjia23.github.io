@@ -82,3 +82,20 @@ deploy:
 - type: git
   # repo: https://github_token@github.com/Yangjia23/Yangjia23.github.io.git
   # branch: master
+
+sequence:
+  webfont: https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js
+  raphael: https://cdn.bootcss.com/raphael/2.2.7/raphael.min.js
+  underscore: https://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js
+  sequence: https://cdn.bootcss.com/js-sequence-diagrams/1.0.6/sequence-diagram-min.js
+  css: # optional, the url for css, such as hand drawn theme 
+  options: 
+    theme: simple
+    css_class:  
+
+# mermaid chart 
+mermaid: ## mermaid url https://github.com/knsv/mermaid 
+  enable: true  # default true 
+  version: "7.1.2" # default v7.1.2 
+  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js 
+    #startOnload: true  // default true
