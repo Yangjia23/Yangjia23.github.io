@@ -1,6 +1,8 @@
 ---
 title: 'Webpack4.0 学习 - 基础篇'
 date: 2019-09-08 10:53:08
+thumbnail: /gallery/thumbnail/webpack_001.jpg
+toc: true
 tags:
     - Webpack
 ---
