@@ -67,4 +67,5 @@ Webpack 做为一个前端打包工具，其中最重要的概念就是模块。
     string | production (默认)，development, none
  
 - `loader`
+    111s
 - `plugin`
