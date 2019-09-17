@@ -1,5 +1,5 @@
 ---
-title: webpack4.0学习-进阶篇
+title: webpack4.0学习-实用篇
 date: 2019-09-17 22:53:05
 thumbnail: /gallery/thumbnail/webpack_001.jpg
 toc: true
