@@ -64,12 +64,12 @@ WDM 将 webpack 输出的文件传输给服务器
 
 打包输出文件名的后缀
 
-## 1. 生成
+### 1. 生成
 - **Hash**: 和整个项目的构建关联，只有项目文件有修改，整个项目构建的　hash 值就会变化
 - **Chunkhash**:　和　webpack 打包的　`chunk` 相关，　不同的　`entry` 生成不同的　`chunkhash` 值，　常用于 JS 文件
 - **Contenthash**:　和文件的内容相关，内容不变，`contenthash` 则不变，　常用于　CSS 文件
 
-## 2. 使用
+### 2. 使用
 - JS 的文件指纹, 设置　`output` 的　`filename`
     ```js
     module.exports = {
@@ -106,8 +106,62 @@ WDM 将 webpack 输出的文件传输给服务器
     ```
 
 - 图片的文件指纹
-
 设置 `file-loader` 或　`url-loader` 的 name, 使用　`[hash]` 占位符
-
 md5 占位符默认32 位
+
+## 四、代码压缩
+- JS 文件
+    
+    内置了 `uglifyjs-webpack-plugin`,  在 `production` 模式自动开启
+
+- CSS 文件
+    
+    `css-loader` 在 1.0 版本之前可设置 `minimize` 参数为 `true` 即可
+
+    现在，需要使用 `optimize-css-assets-webpack-plugin` 插件，同时配合使用 `cssnano` 工具压缩 CSS 代码
+
+    ```js
+    module.exports = {
+        plugins: [
+            new OptimizeCssAssetsPlugin({
+                assetNameRegExp: /\.css$/g,
+                cssProcessor: require('cssnano')
+            })
+        ]
+    }
+    ```
+- HTML 文件
+  
+  使用 `html-webpack-plugin` 插件，设置压缩参数
+  ```js
+  module.exports = {
+    plugins: [
+      new HtmlWebpackPlugin({
+        // ...
+        minify: {
+          html5: true, // 以html5的文档格式解析 html 的模板文件
+          collapseWhitespace: true, //删除空白符与换行符
+          preserveLineBreaks: false, // 删除换行
+          minifyCSS: true, // 仅压缩内联 css
+          minifyJS: true, // 仅压缩内联 js
+          removeComments: false, // 移除注释
+        }
+      })
+    ]
+  }
+  ```
+
+## 五、自动清理构建目录
+
+使用 `clean-webpack-plugin` 插件，避免每次构建前手动删除 dist, 默认会删除 `output` 指定的输出目录
+
+```js
+  module.exports = {
+    plugins: [
+      new CleanWebpackPlugin()
+    ]
+  }
+```
+
+
 
