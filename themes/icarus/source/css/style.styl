@@ -23,7 +23,13 @@ body, button, input, select, textarea
     .is-2-column .container
         max-width: screen-desktop - 2 * gap
         width: screen-desktop - 2 * gap
+    .is-3-column .container
+        max-width: screen-widescreen - gap
+        width: screen-widescreen - gap
 @media screen and (min-width: screen-fullhd)
+    .is-3-column .container
+        max-width: screen-fullhd - 2 * gap
+        width: screen-fullhd - 2 * gap
     .is-2-column .container
         max-width: screen-widescreen - 2 * gap
         width: screen-widescreen - 2 * gap
@@ -56,6 +62,8 @@ body, button, input, select, textarea
 .card
     border-radius: 4px
     box-shadow: 0 4px 10px rgba(0,0,0,0.05), 0 0 1px rgba(0,0,0,0.1)
+    &:hover
+       box-shadow: 0 6px 15px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.1)
     & + .card,
     & + .column-right-shadow
         margin-top: 1.5rem
@@ -125,6 +133,8 @@ img.thumbnail
         margin-top: 0
     .menu-list li ul
         margin-right: 0
+    .menu-list a
+        transition: background-color 0.3s ease-in-out
     .menu-list a.level
         display: flex
 
@@ -172,6 +182,8 @@ img.thumbnail
 .article
     .article-meta
         margin-bottom: 0.5rem !important
+    .title 
+        margin: 0 0 0.5rem -0.1rem;
     .content
         font-size: 1.1rem
         blockquote.pullquote
@@ -211,6 +223,23 @@ img.thumbnail
     &:last-child:not(:first-child)
         .qrcode
             right: -0.75rem
+
+.post-copyright
+    font-size: 1rem
+    letter-spacing: 0.02rem
+    word-break: break-all
+    margin: 2.5rem 0 0
+    padding: 1rem 1rem
+    border-left: 3px solid #FF1700
+    background-color: #F9F9F9
+
+.article {counter-reset:section}
+.article h2{counter-reset:sub-section}
+.article h3{counter-reset:composite}
+.article h4{counter-reset:detail}
+.article h2:before{content:counter(section) " ";counter-increment:section}
+.article h3:before{content:counter(section) "." counter(sub-section) " ";counter-increment:sub-section}
+.article h4:before{content:counter(section) "." counter(sub-section) "." counter(composite) " ";counter-increment:composite}
 
 @media screen and (max-width: screen-tablet - 1)
     #toc

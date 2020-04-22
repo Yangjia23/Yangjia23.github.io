@@ -40,41 +40,47 @@
                 </div>
             </div>
         </nav>
-        <nav class="level is-mobile">
+        <nav class="level menu-list is-mobile" style="margin-bottom:1rem">
             <div class="level-item has-text-centered is-marginless">
                 <div>
-                    <p class="heading">
-                        <%= _p('common.post', post_count()) %>
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        <%= post_count() %>
-                    </p>
+                    <a href="<%- url_for('/archives/') %>">
+                        <p class="heading">
+                            <%= _p('common.post', post_count()) %>
+                        </p>
+                        <p class="title has-text-weight-normal">
+                            <%= post_count() %>
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
-                    <p class="heading">
-                        <%= _p('common.category', category_count()) %>
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        <%= category_count() %>
-                    </p>
+                    <a href="<%- url_for('/category/') %>">
+                        <p class="heading">
+                            <%= _p('common.category', category_count()) %>
+                        </p>
+                        <p class="title has-text-weight-normal">
+                            <%= category_count() %>
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
-                    <p class="heading">
-                        <%= _p('common.tag', tag_count()) %>
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        <%= tag_count() %>
-                    </p>
+                    <a href="<%- url_for('/tag/') %>">
+                        <p class="heading">
+                            <%= _p('common.tag', tag_count()) %>
+                        </p>
+                        <p class="title has-text-weight-normal">
+                            <%= tag_count() %>
+                        </p>
+                    </a>
                 </div>
             </div>
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="<%= url_for(widget.follow_link) %>" target="_blank">
-                <%= __('widget.follow') %></a>
+                <i class="fab fa-github"></i>&nbsp;&nbsp;<%= __('widget.follow') %></a>
         </div>
         <% const socialLinks = get_config_from_obj(widget, 'social_links'); %>
         <% if (socialLinks !== null) { %>
