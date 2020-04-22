@@ -1,5 +1,5 @@
 ---
-title: css中的动画
+title: CSS中的动画
 date: 2020-04-23 01:49:41
 toc: true
 tags:
@@ -25,13 +25,13 @@ CSS 中的动画主要由以下2个属性决定的
 - **Transition Property**
 - **Animation Property** & **keyframes**
 
-### 1. **Transition Property**
+### **Transition Property**
 
 啥是 `transition` ? `transition` 指从一个“状态”到另一个“状态”的动画模拟, 直译过来就是 “过渡”
 
 ![KMP-next数组](/images/css-transition.png)
 
-#### 1.1、 语法
+#### 语法
 
 `transition` 的语法如下
 
@@ -59,7 +59,7 @@ CSS 中的动画主要由以下2个属性决定的
 }
 ```
 
-#### 1.2、 Transition properties
+#### Transition properties
 
 - `transition-property`:  过渡的CSS 属性名称
 
@@ -71,7 +71,7 @@ CSS 中的动画主要由以下2个属性决定的
 
 - `transition-delay`:  过渡效果的延迟时间 (效果开始前的等待时间)， 单位可以设置成 s 或者 ms
 
-#### 1.3、 Transition property 
+#### Transition property 
 
 当然，不是所有的属性都可以设置不是所有的属性变化都可以设置 过渡效果，常见的，我们可以设置 `color`, `background`, `opacity`, `font-size` 等属性
 
@@ -79,22 +79,22 @@ CSS 中的动画主要由以下2个属性决定的
 
 [Animatable CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
 
-#### 1.4、 Triggering
+#### Triggering
 
 `transition`  通常是由某种“动作”触发，比如鼠标 Hover 悬停，或者用 JavaScript 添加或删除样式类
 
 - Hover
 - Class Change
 
-#### 1.5 Demo
+#### Demo
 
 [Transition Demo](https://codepen.io/Yangjia/pen/zYYexNp)
 
-### 2. **Animation Property** & **keyframes**
+### **Animation Property** & **keyframes**
 
 animation 属性可以将编写的 keyframes 应用到元素上
 
-#### 2.1、 keyframes
+#### keyframes
 
 > `@keyframes` 规则通过在动画序列中定义关键帧（或waypoints）的样式来控制CSS动画序列中的中间步骤
 
@@ -126,7 +126,7 @@ animation 属性可以将编写的 keyframes 应用到元素上
 ```
 `@keyframes` 规则级中的 `from`, `to` 还可以用 0% , 100% 来代替，如果需要定义更多的帧, 还可以加入像 20%， 50% 等等
 
-#### 2.2、 Animation
+#### Animation
 
 `Animation` 可以是多个“状态”间的变化
 
@@ -155,7 +155,7 @@ animation 属性可以将编写的 keyframes 应用到元素上
 }
 ```
 
-#### 2.3、 Animation properties
+#### Animation properties
 
 - **`animation-name`**
 
@@ -277,7 +277,7 @@ animation 属性可以将编写的 keyframes 应用到元素上
 
     动画是否暂停或运行， 属性值 `running`(默认值), `paused`
 
-#### 2.4、 Demo
+#### Demo
 
 [Animation Demo](https://codepen.io/Yangjia/pen/dyyaPdr)
 
@@ -285,11 +285,11 @@ animation 属性可以将编写的 keyframes 应用到元素上
 
 ## 总结
 
-#### 3.1、 何时使用动画？
+### 何时使用动画？
 
 动画可以吸引用户，但不可滥用动画，导致用户抓不住重点
 
-#### 3.2、 Animation 、Transition 区别
+### Animation 、Transition 区别
 
 - `Transition` (过渡)： 
     
@@ -299,11 +299,7 @@ animation 属性可以将编写的 keyframes 应用到元素上
 
     从状态A 过渡到状态 C, 再到 状态 B，也就是可以插入任意个中间状态，同时动画可以自动开始、循环、暂停等
 
-----
-
-## 小技巧
-
-#### 4.1 小技巧
+### 小技巧
 - [MDN](https://developer.mozilla.org/zh-CN/)
 - [动画库](https://animista.net/)
 - 搜索技巧 `css xxx generator`
